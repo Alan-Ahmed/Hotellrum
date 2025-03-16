@@ -1,0 +1,19 @@
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ange rumstyp (Enkelrum, Dubbelrum, Svit): ");
+        string valdRumstyp = Console.ReadLine();
+
+        try
+        {
+            // Korrigera metoden från "SkapaHotellrum" till "SkapaRum"
+            Hotellrum mittRum = RumFabrik.SkapaRum(valdRumstyp);
+            mittRum.VisaRum();
+        }
+        catch (ArgumentException ex)
+        {
+            Console.WriteLine($"Fel: {ex.Message}");
+        }
+    }
+}
